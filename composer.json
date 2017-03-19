@@ -1,0 +1,29 @@
+{
+    "name": "dvizh/app",
+    "description": "Dvizh main application",
+    "keywords": ["application", "dvizh", "dvizh software"],
+    "homepage": "https://github.com/dvizh/",
+    "type": "dic",
+    "license": "BSD-3-Clause",
+    "support": {
+        "source": "https://github.com/dvizh/application"
+    },
+    "authors": [
+        {
+            "name": "Ilya Pistol",
+            "email": "admin@nethammer.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "autoload": {
+        "psr-4": {
+            "dvizh\\app\\": "src/"
+        }
+    }
+}
