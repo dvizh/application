@@ -1,7 +1,7 @@
 <?php
 namespace dvizh\app\logic\discount;
 
-use dvizh\app\interfaces\services\singleton\{UserCart, UserOrder, UserPromocode};
+use dvizh\app\interfaces\services\singletons\{UserCart, UserOrder, UserPromocode};
 use dvizh\app\logic\cart\CostSetter;
 
 class CumulativeDiscountCalculate extends \dvizh\app\base\Component

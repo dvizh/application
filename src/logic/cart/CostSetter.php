@@ -1,7 +1,7 @@
 <?php
 namespace dvizh\app\logic\cart;
 
-use dvizh\app\interfaces\services\singleton\UserCart;
+use dvizh\app\interfaces\services\singletons\UserCart;
 
 class CostSetter extends \dvizh\app\base\Component
 {
