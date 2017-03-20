@@ -3,6 +3,8 @@ namespace dvizh\app\interfaces\services;
 
 interface Order
 {
+    public function getById(int $id) : \dvizh\app\interfaces\entities\Order;
+
     public function getUserTotalSum(\dvizh\app\interfaces\entities\User $user) : int;
 
     public function filling();
