@@ -23,19 +23,15 @@ class DiscountSetter extends \dvizh\app\base\Component
 
     public function execute()
     {
-        $cost = $this->cart->getCost();
+        if($this->discount->isActive()) {
+            switch($this->discount->getType()) {
+                case self::TYPE_CUMULATIVE:
+                    (new CumulativeDiscounter($this->cart, $this->order, $this->discount, $discount))->execute();
+                    break;
 
-        if($cost > 0 && $discount = $this->discount->getDiscountEntity()) {
-            if($discount->isActive()) {
-                switch($discount->getType()) {
-                    case self::TYPE_CUMULATIVE:
-                        (new CumulativeDiscounter($this->cart, $this->order, $this->discount, $discount))->execute();
-                        break;
-
-                    case self::TYPE_PERCENT:
-                        (new PersentDiscounter($this->cart, $discount->getDiscount()))->execute();
-                        break;
-                }
+                case self::TYPE_PERCENT:
+                    (new PersentDiscounter($this->cart, $discount->getDiscount()))->execute();
+                    break;
             }
         }
     }
